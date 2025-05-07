@@ -45,20 +45,14 @@ Este proyecto contiene un script de shell (bash) diseñado para ejecutarse en un
    sudo cp rclone-proxmox-backup /etc/logrotate.d/
    ```
 
-5. Configurar tarea cron (ejemplo para ejecutar cada hora):
+5. Configurar tarea cron (ejemplo para ejecutar todas las noches a las 2 de la madrugada):
    ```
    crontab -e
    ```
    Añadir:
    ```
-   0 * * * * /usr/bin/flock -n /tmp/proxmox_onedrive_backup.lock /ruta/al/backup_proxmox_to_onedrive.sh
+   0 2 * * * /usr/bin/flock -n /tmp/proxmox_onedrive_backup.lock /ruta/al/backup_proxmox_to_onedrive.sh
    ```
-
-## Notas sobre Seguridad
-
-- **IMPORTANTE**: Nunca subas tu archivo `rclone.conf` o cualquier token/secreto al repositorio
-- La configuración `.gitignore` ya está preparada para evitar esto
-- Asegúrate de proteger adecuadamente el script en tu servidor Proxmox
 
 ## Soporte y Contribuciones
 
