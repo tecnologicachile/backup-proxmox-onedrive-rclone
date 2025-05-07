@@ -1,0 +1,11 @@
+# Contenido para /etc/logrotate.d/rclone-proxmox-backup
+
+/var/log/rclone_proxmox_checklog_onedrive.log {
+    weekly          # Rotar los logs semanalmente
+    missingok       # No dar error si el archivo de log no existe
+    rotate 4        # Mantener 4 archivos de log rotados (ej. log.1, log.2.gz, ...)
+    compress        # Comprimir los archivos de log rotados
+    delaycompress   # No comprimir el último archivo rotado inmediatamente
+    notifempty      # No rotar el archivo si está vacío
+    create 0640 root adm  # Crear nuevo log vacío con permisos/propietario/grupo adecuados
+} 

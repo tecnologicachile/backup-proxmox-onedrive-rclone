@@ -1,0 +1,15 @@
+# Archivo de configuración de Rclone (¡CONTIENE SECRETOS!)
+rclone.conf
+*.conf
+
+# Archivos de Log generados por el script o rclone
+*.log
+
+# Archivos temporales o de respaldo del editor
+*.tmp
+*.bak
+*.swp
+*~
+
+# Otros archivos específicos de Proxmox o del sistema que no deben estar en el repo
+# (Añadir según sea necesario) 
